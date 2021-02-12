@@ -4,10 +4,56 @@
 							<div class="col-md-10">
 								<div class="card card-body">
 								<p> pedidos</p>
+								
+								<div class="" id="btnAgregarPedidos">
+										<button onclick="btnAgregarPedidos()" type="button" class="btn btn-primary" >Agregar Pedido</button>
+									</div>
+									
+									<div class="oculto" id="btnAgregarCancelarPedidos">
+										<button onclick="btnAgregarEsconder()" type="button" class="btn btn-primary" >Cancelar Agregar Gasto</button>
+									</div>
+									
+										<div class="p-2 oculto" id="formPedidos">
+											<div class="card card-body">
+											<form name="formPedidos" id="formPedidos" method="post" enctype="multipart/form-data" >
+											  <div class="form-group">
+											    <label for="formGroupExampleInput">Id Gasto</label>
+											    <input type="text" class="form-control" id="idGasto" placeholder="Ingrese el id del Gasto">
+											  </div>
+											  <div class="form-group">
+											    <label for="formGroupExampleInput2">Descripción</label>
+											    <input type="text" class="form-control" id="descripcionGasto" placeholder="Descripción">
+											  </div>
+											  <div class="form-group">
+											    <label for="formGroupExampleInput2">Valor total</label>
+											    <input type="text" class="form-control" id="valorTotal" placeholder="Valor Total">
+											  </div>
+											  <div class="form-group">
+											    <label for="formGroupExampleInput2">Id Proveedor</label>
+											    <input type="text" class="form-control" id="idProveedor" placeholder="ID Proveedor">
+											  </div>
+											  
+											  <input onclick="registrarGasto()" class="btn btn-primary" value="Registrar Gasto" id="regGasto">
+											  
+											</form>
+											
+											</div>
+										</div>
+								
+								
 									<div class="" id="tablaPedidos"></div>
 								</div>
 							
 									
+											
+											<!-- eliminado -->    
+					                	<div class="alert alert-danger oculto" role="alert" id="eliminadoPedidos">
+					                    	<center>Se eliminó el registro!</center>
+					                	</div>
+					                	
+										
+										</div>
+										</div>
 							
 							</div>
 						</div>
