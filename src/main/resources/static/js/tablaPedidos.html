@@ -20,8 +20,8 @@
 			$.getJSON('http://localhost:8090/pedidos', function(data) {
 				var tr=[];
 				for (var i = 0; i < data.length; i++) {
-					/* tr.push('<tr id="'+data[i].id+'">');*/
-					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].idPedido+ '</td>');
+					tr.push('<tr id="'+data[i].idPedido+'">');
+					/*tr.push('<td class="fuente" style="font-size:14px" >' + data[i].idPedido+ '</td>');*/
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].fechaPedido + '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].costoTotalPedido + '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].estadoPedido + '</td>');
