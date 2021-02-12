@@ -9,6 +9,7 @@
 				<th  class="fuente" style="font-size:17px">&nbsp Costo &nbsp</th>
 				<th  class="fuente" style="font-size:17px">&nbsp Estado &nbsp</th>
 				<th  class="fuente" style="font-size:17px">&nbsp Iva &nbsp</th>
+				<th colspan="1" class="fuente" style="font-size:15px">&nbsp Funcion &nbsp</th>
 			</tr>
 			
 	</table>
@@ -20,22 +21,16 @@
 			$.getJSON('http://localhost:8090/pedidos', function(data) {
 				var tr=[];
 				for (var i = 0; i < data.length; i++) {
-					tr.push('<tr id="'+data[i].idPedido+'">');
-					/*tr.push('<td class="fuente" style="font-size:14px" >' + data[i].idPedido+ '</td>');*/
+					tr.push('<tr id="'+data[i].idPedido + '">');
+					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].idPedido+ '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].fechaPedido + '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].costoTotalPedido + '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].estadoPedido + '</td>');
 					tr.push('<td class="fuente" style="font-size:14px" >' + data[i].ivaTotalArticulo + '</td>');
-					/*
-					tr.push('<td>' + '<a onclick="ocuparId(' + data[i].id + ')" data-toggle="modal" data-target="#actualizarCat"><img src="../images/b.editar.png" width="42px">  </a>' + '</td');
-					*/
-					tr.push('<td>' + '<a onclick="ocuparId(' + data[i].idPedido + ')" data-toggle="modal" data-target="#actualizarCat">EDITAR  </a>' + '</td');
 					
-					/*
-					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].id+')"><img src="../images/b.eliminar.png" width="42px"></a>' + '</td'); 	
-					*/
-					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].idPedido+')">ELIMINAR</a>' + '</td'); 	
+					tr.push('<td>' + '<a onclick="ocuparId(' + data[i].idPedido + ')" data-toggle="modal" data-target="#actualizarCat"> <img src="../images/b.editar.png" width="45px">  </a>' + '</td');
 					
+					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].idPedido+')"> <img src="../images/b.eliminar.png" width="45px"> </a>' + '</td'); 	
 					
 					tr.push('<td>');
 						//tr.push('<a data-toggle="modal" data-target="#modalwarning'+data[i].id+'" class="btn btn-primary"> <i class="fas fa-trash-alt ml-2"></i></a>');

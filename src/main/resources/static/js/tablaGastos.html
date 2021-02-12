@@ -12,7 +12,7 @@
 				<th  class="fuente" style="font-size:17px">&nbsp Descripción &nbsp</th>
 				<th  class="fuente" style="font-size:17px">&nbsp Total &nbsp</th>
 				<th  class="fuente" style="font-size:17px">&nbsp IdProveedor &nbsp</th>
-				<th  colspan="2" class="fuente" style="font-size:17px">&nbsp accion &nbsp</th>
+				<th  colspan="1" class="fuente" style="font-size:17px">&nbsp accion &nbsp</th>
 
 			</tr>
 			
@@ -34,12 +34,12 @@
 					
 					/*tr.push('<td>' + '<a onclick="ocuparId(' + data[i].id + ')" data-toggle="modal" data-target="#actualizarCat"><img src="../images/b.editar.png" width="42px">  </a>' + '</td');
 					*/
-					tr.push('<td>' + '<a onclick="ocuparId(' + data[i].idGastos + ')" data-toggle="modal" data-target="#actualizarCat"> editar  </a>' + '</td');
+					tr.push('<td>' + '<a onclick="ocuparId(' + data[i].idGastos + ')" data-toggle="modal" data-target="#actualizarCat"> <img src="../images/b.editar.png" width="45px">  </a>' + '</td');
 					/*
 					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].id+')"><img src="../images/b.eliminar.png" width="42px"></a>' + '</td'); 	
 					*/
 					
-					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].idGastos+')"> eliminar</a>' + '</td'); 	
+					tr.push('<td>' + '<a onclick="eliminarCategoria('+data[i].idGastos+')"> <img src="../images/b.eliminar.png" width="45px"> </a>' + '</td'); 	
 					
 					tr.push('<td>');
 						//tr.push('<a data-toggle="modal" data-target="#modalwarning'+data[i].id+'" class="btn btn-primary"> <i class="fas fa-trash-alt ml-2"></i></a>');
