@@ -1,12 +1,16 @@
 <div class="card card-body">
-	<table class="table table-striped" id="tabla1" border="2px">
+	<table class="table table-striped" id="tabla3" border="2px">
 			<tr>
-				<th class="fuente" style="font-size:15px">&nbsp Inicio &nbsp</th>
-				<th class="fuente" style="font-size:15px">&nbsp Imagen &nbsp</th>
-				<th class="fuente" style="font-size:15px">&nbsp Nombre &nbsp</th>	
-				<th class="fuente" style="font-size:15px">&nbsp Precio &nbsp</th>	
-				<th class="fuente" style="font-size:15px">&nbsp Descripción &nbsp</th>								
-				<th colspan="2" class="fuente" style="font-size:15px">&nbsp Funcion &nbsp</th>
+				<th class="fuente" style="font-size:15px">&nbsp Id &nbsp</th>
+				<th class="fuente" style="font-size:15px">&nbsp Id &nbsp</th>
+				<th class="fuente" style="font-size:15px">&nbsp Compra &nbsp</th>
+				<th class="fuente" style="font-size:15px">&nbsp fecha &nbsp</th>	
+				<th class="fuente" style="font-size:15px">&nbsp recargo &nbsp</th>	
+				<th class="fuente" style="font-size:15px">&nbsp Descuento &nbsp</th>	
+				<th class="fuente" style="font-size:15px">&nbsp costo &nbsp</th>
+				<th class="fuente" style="font-size:15px">&nbsp idPEdido &nbsp</th>
+									
+				<!-- <th colspan="2" class="fuente" style="font-size:15px">&nbsp Funcion &nbsp</th> -->
 			</tr>
 			
 	</table>
@@ -15,22 +19,25 @@
 <script type="text/javascript">
 
 		$(document).ready(function() {
-			$.getJSON('http://localhost:9091/api/v1/producto', function(data) {
+			$.getJSON('http://localhost:8083/api/v1/compra', function(data) {
 				var tr=[];
 				for (var i = 0; i < data.length; i++) {
-					tr.push('<tr id="'+data[i].id+'">');
-					tr.push('<td class="fuente">' + data[i].inicio + '</td>');	
-					tr.push('<td><img src="http://localhost:9091/api/v1/producto/pic/' + data[i].imagen1 + '" width="70" class="rounded"></td>');	
-					tr.push('<td class="fuente">' + data[i].nombre + '</td>');
-					tr.push('<td class="fuente">' + data[i].precio + '</td>');
-					tr.push('<td class="fuente">' + data[i].descripcion + '</td>');
-					tr.push('<td><a onclick="ocuparIdPro('+data[i].id+')" data-toggle="modal" data-target="#actualizarPro"><img src="../images/b.editar.png" width="45px">  </a></td');
-					tr.push('<td><a onclick="eliminarProducto('+ data[i].id +')"><img src="../images/b.eliminar.png" width="45px"></a></td'); 	
+					tr.push('<tr id="'+data[i]._id+'">');
+					tr.push('<tr id="'+data[i].IdCompra+'">');
+					
+					tr.push('<td class="fuente">' + data[i].idDocCompra + '</td>');	
+					
+					tr.push('<td class="fuente">' + data[i].fechaCompra + '</td>');
+					tr.push('<td class="fuente">' + data[i].recargoCompra + '</td>');
+					tr.push('<td class="fuente">' + data[i].descuentoCompra + '</td>');
+					 tr.push('<td class="fuente">' + data[i].costoTotalCompra + '</td>');
+					 tr.push('<td class="fuente">' + data[i].idPedido + '</td>');
+					 	
 					tr.push('<td>' + '</td'); 	
 					
 					tr.push('</tr>');
 				}
-				$('#tabla1').append($(tr.join('')));
+				$('#tabla3').append($(tr.join('')));
 			});						
 		});
 		
